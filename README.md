@@ -1,4 +1,4 @@
-# AnyCLItoGUI
+# Sym-Biote
 A simple, semi-easy to use symlink tool
 
 # Warnings
