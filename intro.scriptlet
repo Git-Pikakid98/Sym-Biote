@@ -1,0 +1,34 @@
+﻿#Requires AutoHotkey v2.0
+#NoTrayIcon
+
+;@Ahk2Exe-Set FileVersion, 1.0
+;@Ahk2Exe-Set ProductVersion, 1.0.0.0
+;@Ahk2Exe-Set CompanyName, Pikakid98
+
+ThisIsWorkingDir := IniRead( A_Temp "\Sym-Biote\wd.ini", "Working", "Dir")
+SetWorkingDir ThisIsWorkingDir
+
+full_command_line := DllCall("GetCommandLine", "str")
+
+if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
+{
+    try
+    {
+        if A_IsCompiled
+            Run '*RunAs "' A_ScriptFullPath '" /restart'
+        else
+            Run '*RunAs "' A_AhkPath '" /restart "' A_ScriptFullPath '"'
+    }
+    ExitApp
+}
+
+; Create the window:
+MyGui := Gui()
+
+SetWindowAttribute(MyGui)
+
+SetWindowTheme(MyGui)
+
+#include .Cmpl8r\DarkMode.scriptlet
+
+TitleRun := "Sym-Biote (v1.0)"
