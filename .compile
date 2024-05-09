@@ -6,10 +6,6 @@ mkdir "Output\Symlinks"
 
 "%AHK%\Compiler\Ahk2Exe.exe" /in "main.ahk" /out ".Cmpl8r\main.exe" /icon "icon.ico" /compress 0 /base "%AHK%\v2\AutoHotkey64.exe"
 
-"%AHK%\Compiler\Ahk2Exe.exe" /in "make.ahk" /out ".Cmpl8r\make.exe" /icon "icon.ico" /compress 0 /base "%AHK%\v2\AutoHotkey64.exe"
-
-"%AHK%\Compiler\Ahk2Exe.exe" /in "make2.ahk" /out ".Cmpl8r\make2.exe" /icon "icon.ico" /compress 0 /base "%AHK%\v2\AutoHotkey64.exe"
-
 "%AHK%\Compiler\Ahk2Exe.exe" /in "Sym-Biote.ahk" /out "Output\Sym-Biote.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
 
 del ".Cmpl8r\DarkMode.scriptlet" /S /Q

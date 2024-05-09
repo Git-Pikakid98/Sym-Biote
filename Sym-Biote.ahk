@@ -8,8 +8,8 @@ MyGui.Title := TitleRun
 
 FileInstall ".Cmpl8r\main.exe", A_Temp "\Sym-Biote\main.exe", 1
 FileInstall ".Cmpl8r\archive.exe", A_Temp "\Sym-Biote\archive.exe", 1
-FileInstall ".Cmpl8r\make.exe", A_Temp "\Sym-Biote\make.exe", 1
-FileInstall ".Cmpl8r\make2.exe", A_Temp "\Sym-Biote\make2.exe", 1
+;FileInstall ".Cmpl8r\make.exe", A_Temp "\Sym-Biote\make.exe", 1
+;FileInstall ".Cmpl8r\make2.exe", A_Temp "\Sym-Biote\make2.exe", 1
 
 myGui.OnEvent("Close", myGui_Close)
 myGui_Close(thisGui) {
@@ -25,10 +25,11 @@ FakeLink := MyGui.Add("Text", "", "Archives")
 FakeLink.SetFont("underline cBlue")
 FakeLink.OnEvent("Click", Launch2)
 
-FakeLink := MyGui.Add("Text", "", "Make New Symlink")
+FakeLink := MyGui.Add("Text", "Disabled", "Make New Symlink")
+/*
 FakeLink.SetFont("underline cBlue")
 FakeLink.OnEvent("Click", Launch3)
-
+*/
 MyGui.Show("w300")
 
 Launch1(*) {
@@ -46,7 +47,7 @@ Launch2(*) {
     PID := ProcessWaitClose("archive.exe", 1000)
     MyGui.Show()
 }
-
+/*
 Launch3(*) {
     MyGui.Hide()
     RunWait A_Temp "\Sym-Biote\make.exe"
@@ -54,3 +55,4 @@ Launch3(*) {
     PID := ProcessWaitClose("make.exe", 1000)
     MyGui.Show()
 }
+*/
