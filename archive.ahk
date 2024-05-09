@@ -5,7 +5,7 @@ MyGui.Title := TitleRun
 
 myGui.OnEvent("Close", myGui_Close)
 myGui_Close(thisGui) {
-	if FileExist(A_Temp "\\Sym-Biote\sym.ini")
+	if FileExist(A_Temp "\Sym-Biote\sym.ini")
 	{
 		FileDelete A_Temp "\Sym-Biote\sym.ini"
 	}

@@ -1,7 +1,7 @@
 ﻿#Requires AutoHotkey v2.0
 #Include intro.scriptlet
 
-FileAppend "mkdir ", A_Temp "\Sym-Biote\symtemp.bat"
+FileAppend "mklink ", A_Temp "\Sym-Biote\symtemp.bat"
 
 IB := InputBox("Select a directory to link from (This is the folder where the Symlink will be created. Please make sure to move your folder or file beforehand)", TitleRun, "w400 h130")
 if IB.Result = "Cancel"
